@@ -21,19 +21,15 @@ import {
   GlobeIcon,
   MusicIcon,
   VideoIcon,
-  PhotoIcon,
-  SaveIcon,
-  ArrowLeftIcon,
-  HeartIcon,
-  UsersIcon,
   ImageIcon,
   FileTextIcon,
   PaletteIcon,
   LanguageIcon,
   BellIcon,
   LockIcon,
-  EyeIcon,
-  CheckIcon
+  CheckIcon,
+  ArrowLeftIcon,
+  HeartIcon
 } from './icons';
 
 // Инициализация Supabase клиента
