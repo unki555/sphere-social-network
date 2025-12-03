@@ -1024,8 +1024,8 @@ const ProfileComponent = ({ user, onClose, onUpdateUser }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetchUserData();
-  }, []);
+  fetchUserData();
+}, [fetchUserData]);
 
   const fetchUserData = async () => {
     setIsLoading(true);
@@ -1962,9 +1962,13 @@ const SocialNetwork = ({ user, onLogout }) => {
     setUserData(prev => ({ ...prev, isOnline }));
   }, [isOnline]);
 
-  const applyTheme = () => {
-    document.documentElement.setAttribute('data-theme', userData.theme || 'light');
-  };
+  const applyTheme = useCallback(() => {
+  document.documentElement.setAttribute('data-theme', userData.theme || 'light');
+}, [userData.theme]);
+
+useEffect(() => {
+  applyTheme();
+}, [applyTheme]);
 
   const fetchPosts = async () => {
     setIsLoading(true);
